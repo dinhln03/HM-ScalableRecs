@@ -50,7 +50,9 @@ poetry install
 
 ### I. Data Preparation
 
-1. Build up Data Hub, a framework of unified discovery, observability, and governance for data:
+1. Checkout the notebook 001-eda.ipynb in notebooks folder to explore the data. 
+
+2. Build up Data Hub, a framework of unified discovery, observability, and governance for data:
     ```sh
     make datahub-up
     ```
@@ -59,7 +61,7 @@ poetry install
 
     ![alt text](images/datahub-1.png)
 
-2. Build up OLTP and Data Warehouse (both are Postgre) to store the data:
+3. Build up OLTP and Data Warehouse (both are Postgre) to store the data:
     ```sh
     make oltp-dwh-up
     ```
