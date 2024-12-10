@@ -1,0 +1,16 @@
+services:
+  postgres:
+    container_name: postgres
+    image: postgres
+    env_file:
+      - .env
+    environment:
+      PGDATA: /data/postgres
+    volumes:
+       - recsys-dwh:/data/postgres
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+  
+volumes:
+  recsys-dwh:
