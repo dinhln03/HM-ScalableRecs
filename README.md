@@ -44,7 +44,10 @@ poetry env use ./.venv/bin/python
 poetry install
 ```
 
-8. Create .env file based on the .env.example file.
+8. Create .env file based on the .env.example file and populate the varibles there.
+```sh
+set -a && source .env && set +a
+```
 
 
 
@@ -67,3 +70,10 @@ poetry install
     **Expected output:**
 
     ![alt text](images/dwh-1.png)
+
+3. Create `oltp` schema to manage the OLTP data:
+    ```sh
+    docker exec -ti postgres /bin/bash -c "psql -U postgres -d postgres -c 'CREATE SCHEMA oltp;'"
+    ```
+
+4. Run notebook `notebooks/002-simulate-oltp.ipynb` to prepare the data for the recommendation system.
