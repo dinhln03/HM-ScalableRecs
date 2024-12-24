@@ -21,6 +21,7 @@ acryl-datahub = "^0.14.1.12"
 evidently = "^0.4.40"
 sqlalchemy = "^2.0.36"
 psycopg2 = "^2.9.10"
+feast = {extras = ["postgres"], version = "^0.42.0"}
 
 
 [tool.poetry.group.dev.dependencies]
