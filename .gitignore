@@ -180,4 +180,6 @@ data/process/*
 !data/process/.gitkeep
 !data/interim/.gitkeep
 data/mlflow/*
+data/interim/*
+!data/interim/*.dvc
 # End of https://www.toptal.com/developers/gitignore/api/python
