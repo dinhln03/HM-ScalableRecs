@@ -81,3 +81,17 @@ set -a && source .env && set +a
 
 dvc init
 dvc add data/interim/*.parquet
+dvc remote add -d minio s3://data/dvc_remote
+dvc remote modify minio endpointurl http://localhost:10000
+dvc remote modify minio access_key_id minio
+dvc remote modify minio secret_access_key minio123
+git commit .dvc/config -m "Configure DVC remote"
+dvc push
+
+dvc pull
+
+Version control:
+git checkout ...
+dvc checkout ...
+git commit data/data.xml.dvc -m "Reveting to the previous version"
+dvc pull

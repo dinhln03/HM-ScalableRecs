@@ -133,6 +133,32 @@ unity-catalog = ["Deprecated", "PyYAML", "acryl-datahub-classify (==0.0.11)", "a
 vertica = ["Deprecated", "PyYAML", "acryl-datahub-classify (==0.0.11)", "aiohttp (<4)", "avro (>=1.11.3,<1.12)", "avro-gen3 (==0.7.16)", "cached-property", "cachetools", "click (>=7.1.2)", "click-default-group", "click-spinner", "docker", "expandvars (>=0.6.5)", "great-expectations (>=0.15.12,<=0.15.50)", "greenlet", "humanfriendly", "ijson", "importlib-metadata (>=4.0.0)", "jsonref", "jsonschema", "numpy (<2)", "packaging", "patchy (==2.8.0)", "pip", "progressbar2", "psutil (>=5.8.0)", "pydantic (<2)", "python-dateutil (>=2.8.0)", "requests-file", "ruamel.yaml", "schwifty (<2024.08.0)", "scipy (>=1.7.2)", "sqlalchemy (>=1.4.39,<2)", "sqlglot[rs] (==25.26.0)", "sqlparse", "tabulate", "toml (>=0.10.0)", "traitlets (!=5.2.2)", "vertica-sqlalchemy-dialect[vertica-python] (==0.0.8.2)"]
 
 [[package]]
+name = "aiobotocore"
+version = "2.17.0"
+description = "Async client for aws services using botocore and aiohttp"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "aiobotocore-2.17.0-py3-none-any.whl", hash = "sha256:aedccd5368a64401233ef9f27983d3d3cb6a507a6ca981f5ec1df014c00e260e"},
+    {file = "aiobotocore-2.17.0.tar.gz", hash = "sha256:a3041333c565bff9d63b4468bee4944f2d81cff63a45b10e5cc652f3837f9cc2"},
+]
+
+[package.dependencies]
+aiohttp = ">=3.9.2,<4.0.0"
+aioitertools = ">=0.5.1,<1.0.0"
+boto3 = {version = ">=1.35.74,<1.35.94", optional = true, markers = "extra == \"boto3\""}
+botocore = ">=1.35.74,<1.35.94"
+jmespath = ">=0.7.1,<2.0.0"
+multidict = ">=6.0.0,<7.0.0"
+python-dateutil = ">=2.1,<3.0.0"
+urllib3 = {version = ">=1.25.4,<2.2.0 || >2.2.0,<3", markers = "python_version >= \"3.10\""}
+wrapt = ">=1.10.10,<2.0.0"
+
+[package.extras]
+awscli = ["awscli (>=1.36.15,<1.36.35)"]
+boto3 = ["boto3 (>=1.35.74,<1.35.94)"]
+
+[[package]]
 name = "aiohappyeyeballs"
 version = "2.4.4"
 description = "Happy Eyeballs for asyncio"
@@ -253,6 +279,21 @@ files = [
 
 [package.dependencies]
 aiohttp = "*"
+
+[[package]]
+name = "aioitertools"
+version = "0.12.0"
+description = "itertools and builtins for AsyncIO and mixed iterables"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "aioitertools-0.12.0-py3-none-any.whl", hash = "sha256:fc1f5fac3d737354de8831cbba3eb04f79dd649d8f3afb4c5b114925e662a796"},
+    {file = "aioitertools-0.12.0.tar.gz", hash = "sha256:c2a9055b4fbb7705f561b9d86053e8af5d10cc845d22c32008c43490b2d8dd6b"},
+]
+
+[package.extras]
+dev = ["attribution (==1.8.0)", "black (==24.8.0)", "build (>=1.2)", "coverage (==7.6.1)", "flake8 (==7.1.1)", "flit (==3.9.0)", "mypy (==1.11.2)", "ufmt (==2.7.1)", "usort (==1.0.8.post1)"]
+docs = ["sphinx (==8.0.2)", "sphinx-mdinclude (==0.6.2)"]
 
 [[package]]
 name = "aiosignal"
@@ -684,6 +725,44 @@ files = [
     {file = "blinker-1.9.0-py3-none-any.whl", hash = "sha256:ba0efaa9080b619ff2f3459d1d500c57bddea4a6b424b60a91141db6fd2f08bc"},
     {file = "blinker-1.9.0.tar.gz", hash = "sha256:b4ce2265a7abece45e7cc896e98dbebe6cead56bcf805a3d23136d145f5445bf"},
 ]
+
+[[package]]
+name = "boto3"
+version = "1.35.93"
+description = "The AWS SDK for Python"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "boto3-1.35.93-py3-none-any.whl", hash = "sha256:7de2c44c960e486f3c57e5203ea6393c6c4f0914c5f81c789ceb8b5d2ba5d1c5"},
+    {file = "boto3-1.35.93.tar.gz", hash = "sha256:2446e819cf4e295833474cdcf2c92bc82718ce537e9ee1f17f7e3d237f60e69b"},
+]
+
+[package.dependencies]
+botocore = ">=1.35.93,<1.36.0"
+jmespath = ">=0.7.1,<2.0.0"
+s3transfer = ">=0.10.0,<0.11.0"
+
+[package.extras]
+crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
+
+[[package]]
+name = "botocore"
+version = "1.35.93"
+description = "Low-level, data-driven core of boto 3."
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "botocore-1.35.93-py3-none-any.whl", hash = "sha256:47f7161000af6036f806449e3de12acdd3ec11aac7f5578e43e96241413a0f8f"},
+    {file = "botocore-1.35.93.tar.gz", hash = "sha256:b8d245a01e7d64c41edcf75a42be158df57b9518a83a3dbf5c7e4b8c2bc540cc"},
+]
+
+[package.dependencies]
+jmespath = ">=0.7.1,<2.0.0"
+python-dateutil = ">=2.1,<3.0.0"
+urllib3 = {version = ">=1.25.4,<2.2.0 || >2.2.0,<3", markers = "python_version >= \"3.10\""}
+
+[package.extras]
+crt = ["awscrt (==0.22.0)"]
 
 [[package]]
 name = "cached-property"
@@ -1624,6 +1703,7 @@ dvc-data = ">=3.16.2,<3.17"
 dvc-http = ">=2.29.0"
 dvc-objects = "*"
 dvc-render = ">=1.0.1,<2"
+dvc-s3 = {version = ">=3.2.0,<4", optional = true, markers = "extra == \"s3\""}
 dvc-studio-client = ">=0.21,<1"
 dvc-task = ">=0.3.0,<1"
 flatten_dict = ">=0.4.1,<1"
@@ -1757,6 +1837,27 @@ docs = ["mkdocs (>=1.5.2,<2)", "mkdocs-gen-files (>=0.5.0,<1)", "mkdocs-material
 markdown = ["dvc-render[table]", "matplotlib"]
 table = ["flatten-dict (>=0.4.1,<1)", "tabulate (>=0.8.7)"]
 tests = ["dvc-render[markdown,table]", "pytest (>=7,<9)", "pytest-cov (>=4.1.0)", "pytest-mock", "pytest-sugar"]
+
+[[package]]
+name = "dvc-s3"
+version = "3.2.0"
+description = "s3 plugin for dvc"
+optional = false
+python-versions = ">=3.9"
+files = [
+    {file = "dvc_s3-3.2.0-py3-none-any.whl", hash = "sha256:036fa8b847349f14cf8ab5e789ae4eda47f50dd1eee487c83ee1c0902d647c25"},
+    {file = "dvc_s3-3.2.0.tar.gz", hash = "sha256:1d012ac1dce47659986f918123b48931cf9b3429ab0b4a22fd4b02448185ceb6"},
+]
+
+[package.dependencies]
+aiobotocore = {version = ">=2.5.0", extras = ["boto3"]}
+dvc = "*"
+flatten-dict = ">=0.4.1,<1"
+s3fs = ">=2023.6.0"
+
+[package.extras]
+dev = ["dvc-s3[tests]", "mypy (==1.9.0)"]
+tests = ["dvc[testing]", "pytest (>=7,<9)", "pytest-cov (>=4.1.0)", "pytest-servers[s3] (>=0.4.0)", "pytest-xdist (>=3.2)"]
 
 [[package]]
 name = "dvc-studio-client"
@@ -3101,6 +3202,17 @@ MarkupSafe = ">=2.0"
 
 [package.extras]
 i18n = ["Babel (>=2.7)"]
+
+[[package]]
+name = "jmespath"
+version = "1.0.1"
+description = "JSON Matching Expressions"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "jmespath-1.0.1-py3-none-any.whl", hash = "sha256:02e2e4cc71b5bcab88332eebf907519190dd9e6e82107fa7f83b1003a6252980"},
+    {file = "jmespath-1.0.1.tar.gz", hash = "sha256:90261b206d6defd58fdd5e85f478bf633a2901798906be2ad389150c5c60edbe"},
+]
 
 [[package]]
 name = "joblib"
@@ -6422,6 +6534,43 @@ files = [
 ]
 
 [[package]]
+name = "s3fs"
+version = "2024.6.1"
+description = "Convenient Filesystem interface over S3"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "s3fs-2024.6.1-py3-none-any.whl", hash = "sha256:ecd20863437409eec1cbfff0b7df5e9772cf7c1926008efab2e17e46f6d52c63"},
+    {file = "s3fs-2024.6.1.tar.gz", hash = "sha256:6c2106d6c34fbfbb88e3d20c6f3572896d5ee3d3512896696301c21a3c541bea"},
+]
+
+[package.dependencies]
+aiobotocore = ">=2.5.4,<3.0.0"
+aiohttp = "<4.0.0a0 || >4.0.0a0,<4.0.0a1 || >4.0.0a1"
+fsspec = "==2024.6.1.*"
+
+[package.extras]
+awscli = ["aiobotocore[awscli] (>=2.5.4,<3.0.0)"]
+boto3 = ["aiobotocore[boto3] (>=2.5.4,<3.0.0)"]
+
+[[package]]
+name = "s3transfer"
+version = "0.10.4"
+description = "An Amazon S3 Transfer Manager"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "s3transfer-0.10.4-py3-none-any.whl", hash = "sha256:244a76a24355363a68164241438de1b72f8781664920260c48465896b712a41e"},
+    {file = "s3transfer-0.10.4.tar.gz", hash = "sha256:29edc09801743c21eb5ecbc617a152df41d3c287f67b615f73e5f750583666a7"},
+]
+
+[package.dependencies]
+botocore = ">=1.33.2,<2.0a.0"
+
+[package.extras]
+crt = ["botocore[crt] (>=1.33.2,<2.0a.0)"]
+
+[[package]]
 name = "scikit-learn"
 version = "1.5.2"
 description = "A set of python modules for machine learning and data mining"
@@ -8125,4 +8274,4 @@ type = ["pytest-mypy"]
 [metadata]
 lock-version = "2.0"
 python-versions = "3.11.9"
-content-hash = "5adea87e3d0064a3a988f2ff86bf995836ff791c4771a8f2e882e65cca0f40ba"
+content-hash = "a8ec53fa919fab950a0a224a7a9add5e7b7081836140cd38a55e559ad81fc451"

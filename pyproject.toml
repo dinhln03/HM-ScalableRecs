@@ -31,7 +31,7 @@ seaborn = "^0.13.2"
 matplotlib = "^3.9.2"
 black = "^24.10.0"
 isort = "^5.13.2"
-dvc = "^3.58.0"
+dvc = {extras = ["s3"], version = "^3.58.0"}
 
 [build-system]
 requires = ["poetry-core"]
