@@ -178,6 +178,6 @@ data/raw/*
 data/process/*
 !data/raw/.gitkeep
 !data/process/.gitkeep
-
-
+!data/interim/.gitkeep
+data/mlflow/*
 # End of https://www.toptal.com/developers/gitignore/api/python

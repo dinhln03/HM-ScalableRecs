@@ -39,3 +39,10 @@ Possible cause:
 
 Possible Solution:
 - Run `apt install libpq-dev gcc` and then run `poetry add psycopg2 && poetry install` 
+
+## Cannot install DVC with poetry
+Possible cause:
+- Cannot install tomkit
+
+Possible Solution:
+- Read the solution [here](https://stackoverflow.com/questions/75080993/dbuserrorresponse-while-running-poetry-install)

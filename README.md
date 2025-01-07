@@ -77,3 +77,7 @@ set -a && source .env && set +a
     ```
 
 4. Run notebook `notebooks/002-simulate-oltp.ipynb` to prepare the data for the recommendation system.
+
+
+dvc init
+dvc add data/interim/*.parquet
