@@ -22,7 +22,9 @@ evidently = "^0.4.40"
 sqlalchemy = "^2.0.36"
 psycopg2 = "^2.9.10"
 feast = {extras = ["postgres"], version = "^0.42.0"}
-
+torch = {version = "^2.5.1+cu121", source = "pytorch"}
+torchvision = {version = "^0.20.1+cu121", source = "pytorch"}
+torchaudio = {version = "^2.5.1+cu121", source = "pytorch"}
 
 [tool.poetry.group.dev.dependencies]
 jupyterlab = "^4.2.4"
@@ -32,6 +34,11 @@ matplotlib = "^3.9.2"
 black = "^24.10.0"
 isort = "^5.13.2"
 dvc = {extras = ["s3"], version = "^3.58.0"}
+
+[[tool.poetry.source]]
+name = "pytorch"
+url = "https://download.pytorch.org/whl/cu121"
+priority = "explicit"
 
 [build-system]
 requires = ["poetry-core"]
