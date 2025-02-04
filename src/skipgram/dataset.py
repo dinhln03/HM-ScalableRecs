@@ -83,13 +83,14 @@ class SkipGramDataset(IterableDataset):
 
 			# Construct id_to_idx and idx_to_id mapping (if needed)
 			for item in seq:
+				item = str(item)
 				idx = self.item_id_to_idx.get(item)
 				if idx is None:
 					idx = len(self.item_id_to_idx)
 					self.item_id_to_idx[item] = idx
 					self.item_idx_to_id[idx] = item
 				self.num_targets += 1
-			seq_idx_set = set([self.item_id_to_idx[item] for item in seq])
+			seq_idx_set = set([self.item_id_to_idx[str(item)] for item in seq])
 			for idx in seq_idx_set:
 				# An item can be considered that it has interacted with itself
 				# This helps with negative sampling later
@@ -164,7 +165,7 @@ class SkipGramDataset(IterableDataset):
 
 	def _get_item(self, seq, i):
 		# Convert list of item_id to a list of item_idx
-		sequence = [self.item_id_to_idx[item] for item in seq]
+		sequence = [self.item_id_to_idx[str(item)] for item in seq]
 		target_item = sequence[i]
 
 		positive_pairs = []

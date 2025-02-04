@@ -25,6 +25,8 @@ feast = {extras = ["postgres"], version = "^0.42.0"}
 torch = {version = "^2.5.1+cu121", source = "pytorch"}
 torchvision = {version = "^0.20.1+cu121", source = "pytorch"}
 torchaudio = {version = "^2.5.1+cu121", source = "pytorch"}
+lightning = "^2.5.0.post0"
+qdrant-client = {extras = ["fastembed"], version = "^1.13.2"}
 
 [tool.poetry.group.dev.dependencies]
 jupyterlab = "^4.2.4"
@@ -34,6 +36,7 @@ matplotlib = "^3.9.2"
 black = "^24.10.0"
 isort = "^5.13.2"
 dvc = {extras = ["s3"], version = "^3.58.0"}
+tensorboard = "^2.18.0"
 
 [[tool.poetry.source]]
 name = "pytorch"
